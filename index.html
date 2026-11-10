@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport-fit=cover: la app ocupa toda la pantalla del iPhone (incluido el notch) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Inclusiendo</title>
+  <meta name="description" content="Guía para adaptar actividades de Educación Infantil a niños con necesidades educativas especiales.">
+
+  <!-- Color de la barra del navegador (claro y oscuro) -->
+  <meta name="theme-color" content="#FFF1E6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1E1B2E" media="(prefers-color-scheme: dark)">
+
+  <!-- PWA: manifiesto e iconos -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png">
+
+  <!-- iPhone: icono y aspecto de app normal al añadir a pantalla de inicio -->
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Inclusiendo">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Tipografía redondeada Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Aplica el tema guardado (claro/oscuro) antes de pintar, para que no parpadee -->
+  <script>
+    try {
+      var t = localStorage.getItem("inclusiendo-tema");
+      if (t) document.documentElement.dataset.theme = t === "oscuro" ? "dark" : "light";
+    } catch (e) {}
+  </script>
+</head>
+<body>
+
+  <!-- ===== CABECERA ===== -->
+  <header class="cabecera">
+    <a href="#inicio" class="marca" aria-label="Ir al inicio">
+      <img src="icons/icon.svg" alt="" width="40" height="40">
+      <span>Inclusiendo</span>
+    </a>
+    <button id="btnTema" class="btn-icono" aria-label="Cambiar a modo oscuro" title="Modo claro / oscuro">🌙</button>
+  </header>
+
+  <!-- ===== CONTENIDO =====
+       Aquí la Vista (js/vista.js) pinta la pantalla que toque -->
+  <main id="app" tabindex="-1"></main>
+
+  <!-- ===== BARRA DE NAVEGACIÓN INFERIOR ===== -->
+  <nav class="barra-nav" aria-label="Navegación principal">
+    <a href="#inicio"     data-ruta="inicio"><span class="ico">🏠</span><span>Inicio</span></a>
+    <a href="#recursos"   data-ruta="recursos"><span class="ico">📚</span><span>Recursos</span></a>
+    <a href="#buscar"     data-ruta="buscar"><span class="ico">🔍</span><span>Buscar</span></a>
+    <a href="#pictos"     data-ruta="pictos"><span class="ico">🖼️</span><span>Pictos</span></a>
+    <a href="#signos"     data-ruta="signos"><span class="ico">🤟</span><span>Signos</span></a>
+    <a href="#favoritos"  data-ruta="favoritos"><span class="ico">⭐</span><span>Favoritos</span></a>
+  </nav>
+
+  <!-- Ventana para ver un pictograma en grande -->
+  <dialog id="modal" class="modal"></dialog>
+
+  <!-- Scripts en orden: Modelo → Vista → Controlador → arranque -->
+  <script src="js/modelo.js"></script>
+  <script src="js/vista.js"></script>
+  <script src="js/controlador.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
