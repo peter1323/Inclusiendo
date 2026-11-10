@@ -1,3 +1,5 @@
+<p align="center"><img src="icons/icon.svg" alt="Icono de Inclusiendo" width="160"></p>
+
 # Inclusiendo
 
 Guía para conocer y adaptar actividades de aula de Educación Infantil (0-6 años) a niños con TEA, síndrome de Down, discapacidad intelectual, motórica, auditiva, visual y problemas de conducta.
