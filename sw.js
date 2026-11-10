@@ -9,7 +9,7 @@
    para que los móviles descarguen la versión nueva.
    ===================================================================== */
 
-const VERSION = "inclusiendo-v1";
+const VERSION = "inclusiendo-v2";
 
 // Archivos de la app que se guardan al instalarla
 const ARCHIVOS = [
