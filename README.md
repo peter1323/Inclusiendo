@@ -2,14 +2,15 @@
 
 # Inclusiendo
 
-Guía para conocer y adaptar actividades de aula de Educación Infantil (0-6 años) a niños con TEA, síndrome de Down, discapacidad intelectual, motórica, auditiva, visual y problemas de conducta.
+Guía para conocer y adaptar actividades de aula de Educación Infantil (0-6 años) a niños con TEA, síndrome de Down, discapacidad intelectual, motórica, auditiva, visual, problemas de conducta, trastornos del lenguaje y retraso madurativo.
 
 Todos los niños son distintos y todos encajan: la inclusión es un derecho.
 
 **App:** https://peter1323.github.io/Inclusiendo/
 
 ## Qué incluye
-- Una ficha por discapacidad: características, adaptaciones (comunicación, materiales, espacio, tiempos), una actividad de ejemplo, apps y cuentos.
+- Una ficha por necesidad: características, señales de alerta, adaptaciones (comunicación, materiales, espacio, tiempos), con quién coordinarse, una actividad de ejemplo, apps y cuentos.
+- Página sobre el Diseño Universal para el Aprendizaje (DUA).
 - Recursos para el aula con filtros por tipo y por discapacidad.
 - Buscador general, favoritos y modo oscuro.
 - Buscador de pictogramas de ARASAAC y de signos en Spreadthesign.
@@ -18,7 +19,7 @@ Todos los niños son distintos y todos encajan: la inclusión es un derecho.
 ## Estructura (Modelo-Vista-Controlador)
 | Archivo | Para qué sirve |
 |---|---|
-| `js/modelo.js` | Todo el contenido (arrays `DISCAPACIDADES` y `RECURSOS`). **Para editar textos o enlaces, cambia este archivo.** |
+| `js/modelo.js` | Todo el contenido (arrays `DISCAPACIDADES` y `RECURSOS`, y el objeto `DUA`). **Para editar textos o enlaces, cambia este archivo.** |
 | `js/vista.js` | Genera el HTML de cada pantalla. |
 | `js/controlador.js` | Navegación, clics y búsquedas. |
 | `app.js` | Arranca la app y registra el service worker. |

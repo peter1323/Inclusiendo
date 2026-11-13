@@ -142,9 +142,8 @@ main.entrar { animation: entrar .35s ease; }
 .ficha-cab {
   position: relative; text-align: center; color: #fff;
   padding: 18px 16px 26px; margin: 0 -16px 16px;
-  background: linear-gradient(150deg, var(--c), color-mix(in srgb, var(--c) 60%, #FFB38A));
+  background: linear-gradient(150deg, color-mix(in srgb, var(--c) 70%, #000), color-mix(in srgb, var(--c) 58%, #000));
   border-radius: 0 0 32px 32px; box-shadow: var(--sombra);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, .18);
 }
 @media (min-width: 900px) { .ficha-cab { margin: 0 0 16px; border-radius: 32px; } }
 .ficha-emoji {
@@ -200,9 +199,9 @@ main.entrar { animation: entrar .35s ease; }
 .estrella {
   flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
   border: 0; background: transparent; cursor: pointer;
-  font-size: 1.5rem; color: #C9BFB5; line-height: 1;
+  font-size: 1.5rem; color: #8A8291; line-height: 1;
 }
-.estrella.activa { color: #F5B400; }
+.estrella.activa { color: #D99A00; }
 .estrella.pop { animation: pop .3s ease; }
 @keyframes pop { 50% { transform: scale(1.4); } }
 
@@ -218,7 +217,7 @@ main.entrar { animation: entrar .35s ease; }
 .pasos li::before {
   content: counter(paso); position: absolute; left: 0; top: 6px;
   width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center;
-  background: var(--c); color: #fff; font-weight: 900;
+  background: color-mix(in srgb, var(--c) 62%, #000); color: #fff; font-weight: 900;
 }
 
 /* ---------- 8. Tarjetas de enlaces (apps y recursos) ---------- */
@@ -258,7 +257,7 @@ main.entrar { animation: entrar .35s ease; }
   transition: background .2s, border-color .2s;
 }
 .chip:hover { border-color: var(--c); }
-.chip.activo { background: var(--c); border-color: var(--c); color: #fff; }
+.chip.activo { background: color-mix(in srgb, var(--c) 62%, #000); border-color: transparent; color: #fff; }
 .contador { color: var(--texto-suave); font-weight: 700; margin: 12px 4px 8px; }
 
 .buscador { display: flex; gap: 8px; margin-bottom: 12px; }
@@ -272,7 +271,7 @@ main.entrar { animation: entrar .35s ease; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
   padding: 12px 22px; min-height: 50px; border-radius: 999px; border: 0; cursor: pointer;
-  background: linear-gradient(135deg, var(--coral), var(--naranja)); color: #fff;
+  background: linear-gradient(135deg, var(--coral), var(--naranja)); color: #2E2A3B;
   font-weight: 900; font-size: 1.05rem; text-decoration: none; box-shadow: var(--sombra);
   transition: transform .15s ease;
 }

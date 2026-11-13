@@ -52,11 +52,13 @@ const Controlador = {
       case "pictos":    html = Vista.pictos(); break;
       case "signos":    html = Vista.signos(); break;
       case "favoritos": html = Vista.favoritos(); break;
+      case "dua":       html = Vista.dua(); break;
       default:          html = Vista.inicio();
     }
 
+    if (this.modal.open) this.modal.close();   // al pulsar "atrás" con un pictograma abierto
     this.app.innerHTML = html;
-    this.marcarNavegacion(ruta === "ficha" ? "inicio" : ruta);
+    this.marcarNavegacion(ruta === "ficha" || ruta === "dua" ? "inicio" : ruta);
 
     // Al cambiar de pantalla, subir arriba (salvo al cambiar filtros de recursos)
     if (ruta !== "recursos" || !this.ultimaRuta?.startsWith("recursos")) window.scrollTo(0, 0);
@@ -190,6 +192,8 @@ const Controlador = {
     const btn = document.getElementById("btnTema");
     btn.textContent = oscuro ? "☀️" : "🌙";
     btn.setAttribute("aria-label", oscuro ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
+    // La barra del navegador sigue al tema elegido a mano
+    if (tema) document.querySelectorAll('meta[name="theme-color"]').forEach(m => m.content = oscuro ? "#1E1B2E" : "#FFF1E6");
   },
   cambiarTema() {
     const ahoraOscuro = document.getElementById("btnTema").textContent === "☀️";

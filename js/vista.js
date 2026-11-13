@@ -62,13 +62,20 @@ const Vista = {
         <p>Todos los niños son distintos y <strong>todos encajan</strong>.
            La inclusión es un derecho, no un favor.</p>
       </section>
-      <h2 class="subtitulo">Elige una discapacidad</h2>
+      <h2 class="subtitulo">Elige una necesidad educativa</h2>
       <div class="rejilla">${tarjetas}</div>
-      <a class="tarjeta tarjeta-ancha aparece" href="#recursos" style="--c:var(--naranja); --i:7">
+      <a class="tarjeta tarjeta-ancha aparece" href="#recursos" style="--c:var(--naranja); --i:${DISCAPACIDADES.length}">
         <span class="tarjeta-emoji" aria-hidden="true">📚</span>
         <span>
           <span class="tarjeta-nombre">Recursos para el aula</span>
           <span class="tarjeta-lema">Cuentos, fichas, lengua de signos y webs</span>
+        </span>
+      </a>
+      <a class="tarjeta tarjeta-ancha aparece" href="#dua" style="--c:var(--turquesa); --i:${DISCAPACIDADES.length + 1}">
+        <span class="tarjeta-emoji" aria-hidden="true">♾️</span>
+        <span>
+          <span class="tarjeta-nombre">Diseño Universal para el Aprendizaje</span>
+          <span class="tarjeta-lema">DUA: una clase pensada para todos desde el principio</span>
         </span>
       </a>`;
   },
@@ -121,7 +128,7 @@ const Vista = {
           <summary><span class="sec-ico" aria-hidden="true">${s.icono}</span>
                    <span class="sec-tit">${s.titulo}</span>
                    <span class="flecha" aria-hidden="true">⌄</span></summary>
-          <div class="seccion-cuerpo">${html}</div>
+          <div class="seccion-cuerpo">${s.nota ? `<p class="nota">${this.esc(s.nota)}</p>` : ""}${html}</div>
         </details>`;
     }).join("");
 
@@ -138,8 +145,31 @@ const Vista = {
           <p>${this.esc(d.lema)}</p>
         </header>
         <p class="nota">Hablamos siempre de <strong>niños con ${this.esc(quien)}</strong>:
-           primero el niño, después la discapacidad. Cada niño es único.</p>
+           primero va el niño. Cada niño es único.</p>
         ${acordeon}
+      </div>`;
+  },
+
+  /* ================= PANTALLA: DUA ================= */
+  dua() {
+    const lista = textos => `<ul class="lista">${textos.map(t => `<li class="aparece"><span>${this.esc(t)}</span></li>`).join("")}</ul>`;
+    const principios = DUA.principios.map((p, i) => `
+      <details class="seccion aparece" style="--i:${i}" open>
+        <summary><span class="sec-ico" aria-hidden="true">${p.icono}</span>
+                 <span class="sec-tit">${this.esc(p.titulo)}</span>
+                 <span class="flecha" aria-hidden="true">⌄</span></summary>
+        <div class="seccion-cuerpo"><p><strong>${this.esc(p.texto)}</strong></p>${lista(p.ejemplos)}</div>
+      </details>`).join("");
+    return `
+      <div style="--c:var(--turquesa)">
+        ${this.titulo("♾️", "Diseño Universal para el Aprendizaje", "Tres principios para que la clase sirva a todos.")}
+        ${lista(DUA.intro)}
+        <h2 class="subtitulo">Los tres principios</h2>
+        ${principios}
+        <h2 class="subtitulo">${this.esc(DUA.ejemplo.titulo)}</h2>
+        <ol class="pasos">${DUA.ejemplo.pasos.map(p => `<li class="aparece">${this.esc(p)}</li>`).join("")}</ol>
+        <h2 class="subtitulo">Para saber más</h2>
+        <ul class="enlaces">${DUA.enlaces.map(e => this.tarjetaEnlace({ ...e, icono: "♾️" }, "var(--turquesa)")).join("")}</ul>
       </div>`;
   },
 
@@ -166,7 +196,7 @@ const Vista = {
       ${this.titulo("📚", "Recursos para el aula", "Cuentos, fichas, lengua de signos y webs fiables.")}
       <p class="filtro-tit">Tipo</p>
       <div class="chips">${chipsTipo}</div>
-      <p class="filtro-tit">Discapacidad</p>
+      <p class="filtro-tit">Necesidad</p>
       <div class="chips chips-scroll">${chipsDisc}</div>
       <p class="contador">${lista.length} recursos</p>
       <ul class="enlaces">${tarjetas || `<li class="vacio">No hay recursos con estos filtros.</li>`}</ul>`;
@@ -203,7 +233,7 @@ const Vista = {
       <li class="resultado aparece" style="--c:${color}">
         <div class="enlace-txt">
           <p class="etiquetas">${d ? `<a href="#ficha/${d.id}">${d.emoji} ${this.esc(d.nombre)}</a> · ` : ""}${this.esc(el.titulo)}</p>
-          ${el.url ? `<a href="${this.esc(el.url)}" target="_blank" rel="noopener" class="res-enlace">Abrir enlace ↗</a>` : ""}
+          ${el.url ? `<a href="${this.esc(el.url)}" ${el.url[0] === "#" ? "" : `target="_blank" rel="noopener"`} class="res-enlace">Abrir enlace ↗</a>` : ""}
           <p>${this.esc(el.texto)}</p>
         </div>
         ${this.estrella(el)}

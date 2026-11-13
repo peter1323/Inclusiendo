@@ -9,7 +9,7 @@
    para que los móviles descarguen la versión nueva.
    ===================================================================== */
 
-const VERSION = "inclusiendo-v2";
+const VERSION = "inclusiendo-v3";
 
 // Archivos de la app que se guardan al instalarla
 const ARCHIVOS = [
@@ -30,7 +30,7 @@ const ARCHIVOS = [
 // 1) INSTALAR: guardar los archivos en la caché
 self.addEventListener("install", evento => {
   evento.waitUntil(
-    caches.open(VERSION).then(cache => cache.addAll(ARCHIVOS)).then(() => self.skipWaiting())
+    caches.open(VERSION).then(cache => cache.addAll(ARCHIVOS.map(a => new Request(a, { cache: "reload" })))).then(() => self.skipWaiting())
   );
 });
 

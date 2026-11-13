@@ -18,10 +18,13 @@
    --------------------------------------------------------------------- */
 const SECCIONES = [
   { clave: "caracteristicas", titulo: "Características y limitaciones", icono: "📋" },
+  { clave: "alerta",          titulo: "Señales de alerta",              icono: "🚩",
+    nota: "No son un diagnóstico. Si ves varias, coméntalo con la familia y con el equipo de orientación o de atención temprana." },
   { clave: "comunicacion",    titulo: "Adaptaciones de comunicación",   icono: "💬" },
   { clave: "materiales",      titulo: "Adaptaciones de materiales",     icono: "✂️" },
   { clave: "espacio",         titulo: "Adaptaciones del espacio",       icono: "🏫" },
   { clave: "tiempos",         titulo: "Tiempos y rutinas",              icono: "⏰" },
+  { clave: "coordinacion",    titulo: "Con quién coordinarse",          icono: "🤝" },
   { clave: "actividad",       titulo: "Ejemplo de actividad adaptada",  icono: "🎨" },
   { clave: "apps",            titulo: "Apps y recursos recomendados",   icono: "📱" },
   { clave: "cuentos",         titulo: "Cuentos y materiales para el aula", icono: "📖" }
@@ -78,6 +81,21 @@ const DISCAPACIDADES = [
       "Tareas cortas con descansos programados.",
       "Señal clara de inicio y final de cada actividad (pictograma «terminado»)."
     ],
+    alerta: [
+      "No responde a su nombre a los 12 meses.",
+      "No señala con el dedo para pedir o enseñar a los 12-18 meses.",
+      "No dice palabras sueltas a los 16-18 meses ni frases de dos palabras a los 2 años.",
+      "Poco contacto visual y no comparte intereses (no enseña ni trae objetos).",
+      "No hay juego simbólico (dar de comer a un muñeco) a los 2 años.",
+      "Pierde lenguaje o habilidades sociales que ya tenía, a cualquier edad."
+    ],
+    coordinacion: [
+      "Familia: mismas rutinas, mismos pictogramas y misma forma de anticipar en casa y en el cole.",
+      "Maestras de Pedagogía Terapéutica (PT) y de Audición y Lenguaje (AL).",
+      "Equipo de orientación o de atención temprana, y equipo específico de TEA si existe en tu comunidad.",
+      "Centro de atención temprana y terapeutas externos (logopeda, psicóloga, terapeuta ocupacional).",
+      "Asociación de autismo de la zona."
+    ],
     actividad: {
       titulo: "Asamblea de los buenos días",
       edad: "3-5 años",
@@ -97,6 +115,7 @@ const DISCAPACIDADES = [
       { nombre: "AraWord", texto: "Procesador de textos que escribe a la vez texto y pictogramas.", url: "https://arasaac.org/software/araword" },
       { nombre: "Pictotraductor", texto: "Convierte una frase escrita en pictogramas.", url: "https://www.pictotraductor.com" },
       { nombre: "José Aprende", texto: "Cuentos con pictogramas sobre autocuidados, rutinas y emociones (Aprendices Visuales y Fundación Orange).", url: "https://play.google.com/store/apps/details?id=com.orange.joseaprende" },
+      { nombre: "José Aprende (iPhone)", texto: "La misma app de cuentos con pictogramas, para iPhone y iPad.", url: "https://apps.apple.com/es/app/id815105400" },
       { nombre: "Día a Día", texto: "Diario visual con calendario para guardar lo que se hizo cada día con fotos, vídeos o textos.", url: "https://fundacionorange.es/aplicaciones/dia-a-dia/" },
       { nombre: "e-Mintza", texto: "Comunicador gratuito con pictogramas de ARASAAC para formar frases.", url: "https://fundacionorange.es/aplicaciones/e-mintza/" },
       { nombre: "PictoTEA", texto: "Crea frases con pictogramas, permite añadir los tuyos y tachar tareas.", url: "https://play.google.com/store/search?q=pictotea&c=apps" }
@@ -146,6 +165,21 @@ const DISCAPACIDADES = [
       "Rutinas estables con agenda visual para ganar autonomía.",
       "Descansos de movimiento entre tareas de mesa."
     ],
+    alerta: [
+      "Se diagnostica al nacer: aquí las alertas son de salud y de seguimiento.",
+      "No responde a sonidos o pide que le repitan: revisar la audición (otitis frecuentes).",
+      "Se acerca mucho a los objetos, tuerce un ojo o guiña: revisar la vista.",
+      "Ronca mucho, respira por la boca o está muy cansado: puede dormir mal.",
+      "Dolor de cuello, torpeza nueva al andar o pérdida de fuerza: avisar a la familia enseguida.",
+      "Pierde habilidades que ya tenía."
+    ],
+    coordinacion: [
+      "Familia: comparte los avances y pide que repitan en casa lo trabajado.",
+      "Centro de atención temprana (estimulación, fisioterapia, logopedia).",
+      "Maestras de PT y AL, y auxiliar técnico educativo si lo tiene.",
+      "Equipo de orientación o de atención temprana.",
+      "Asociación de síndrome de Down de la zona y pediatra, a través de la familia."
+    ],
     actividad: {
       titulo: "Bingo de las frutas",
       edad: "4-5 años",
@@ -161,9 +195,8 @@ const DISCAPACIDADES = [
     },
     apps: [
       { nombre: "Soy Visual", texto: "Fotografías, láminas y materiales gráficos para estimular el lenguaje.", url: "https://www.soyvisual.org" },
-      { nombre: "Método de lectura global Troncoso", texto: "Primero palabras completas con imagen, después sílabas y después letras. Recursos en la Fundación Síndrome de Down de Cantabria.", url: "https://downcantabria.com" },
-      { nombre: "Método LecturaSD (Aula PT)", texto: "Método gratuito con pasos, edades y muchas fichas.", url: "https://www.aulapt.org" },
-      { nombre: "José Aprende", texto: "Cuentos con pictogramas para rutinas y autonomía.", url: "https://play.google.com/store/apps/details?id=com.orange.joseaprende" },
+      { nombre: "Método de lectura global Troncoso", texto: "Primero palabras completas con imagen, después sílabas y después letras. Libro completo y gratuito en Down21.", url: "https://www.down21.org/libros-online/libroLectura/index.html" },
+      { nombre: "Método LecturaSD (Aula PT)", texto: "Método gratuito con pasos, edades y muchas fichas.", url: "https://www.aulapt.org/2009/09/15/metodo-de-lectura-para-alumnos-con-sindrome-de-down/" },
       { nombre: "ARASAAC", texto: "Pictogramas para agendas, rutinas y autonomía.", url: "https://arasaac.org" },
       { nombre: "Down21 (Fundación Iberoamericana Down21)", texto: "Artículos y materiales de educación para niños con síndrome de Down.", url: "https://down21.org/educacion/" }
     ]
@@ -210,6 +243,21 @@ const DISCAPACIDADES = [
       "Sesiones cortas con pausas.",
       "Rutinas diarias iguales para ganar autonomía.",
       "Celebrar cada pequeño logro."
+    ],
+    alerta: [
+      "Tarda más que los demás en sentarse, gatear, andar o hablar.",
+      "Le cuesta entender órdenes sencillas para su edad.",
+      "Juego más simple que el de sus compañeros y poca curiosidad.",
+      "Olvida pronto lo aprendido y necesita muchas repeticiones.",
+      "Poca autonomía para su edad (comer, vestirse, control de esfínteres).",
+      "En Infantil se suele hablar de «retraso madurativo» hasta tener un diagnóstico."
+    ],
+    coordinacion: [
+      "Familia: mismas pautas de autonomía en casa y en el cole.",
+      "Maestras de PT y AL.",
+      "Equipo de orientación o de atención temprana (evaluación psicopedagógica).",
+      "Centro de atención temprana.",
+      "Pediatra o neuropediatra, a través de la familia."
     ],
     actividad: {
       titulo: "Hacemos una macedonia",
@@ -269,13 +317,31 @@ const DISCAPACIDADES = [
       "Mesa a la altura de la silla de ruedas (o mesa con escotadura).",
       "Materiales a su alcance, en estantes bajos.",
       "Baño adaptado y cambiador cerca del aula.",
+      "Asiento adaptado y buena postura: pies apoyados y tronco sujeto, como indique la fisioterapeuta.",
       "En psicomotricidad, adaptar el circuito para que todos participen."
     ],
     tiempos: [
       "Más tiempo para desplazarse, vestirse y terminar las tareas.",
       "Alternar tareas de esfuerzo con descanso (se fatiga).",
       "Respetar los cambios de postura que indique la fisioterapeuta.",
+      "En el almuerzo, si le cuesta tragar, sigue las pautas de la logopeda sobre texturas y postura.",
       "Prever con tiempo las salidas y excursiones (accesibilidad, transporte)."
+    ],
+    alerta: [
+      "No sostiene la cabeza a los 4 meses, no se sienta a los 9 o no anda a los 18.",
+      "Usa siempre un solo lado del cuerpo o una sola mano antes de los 2 años.",
+      "Está muy rígido o muy blando (tono muscular).",
+      "Anda de puntillas, se cae mucho o pierde el equilibrio.",
+      "Se atraganta, babea mucho o tose al comer y beber.",
+      "Pierde movimientos que ya hacía."
+    ],
+    coordinacion: [
+      "Familia: cómo le mueven, le sientan y le dan de comer en casa.",
+      "Fisioterapeuta y terapeuta ocupacional: postura y productos de apoyo.",
+      "Auxiliar técnico educativo: desplazamientos, aseo y comida.",
+      "Maestra de AL o logopeda: habla, deglución y comunicador.",
+      "Maestra de PT y equipo de orientación (equipo específico de discapacidad motora si existe).",
+      "Médico rehabilitador o neuropediatra, a través de la familia."
     ],
     actividad: {
       titulo: "Pintamos con canicas",
@@ -294,7 +360,7 @@ const DISCAPACIDADES = [
       { nombre: "Plaphoons", texto: "Comunicador con pictogramas o escritura; graba frases o las dice con voz sintética. Del Projecte Fressa (Jordi Lagares).", url: "http://www.xtec.cat/~jlagares/" },
       { nombre: "Plaphoons para Android", texto: "Versión para móvil o tablet del comunicador Plaphoons.", url: "https://play.google.com/store/search?q=plaphoons&c=apps" },
       { nombre: "Rata Plaphoons", texto: "Para manejar el ratón del ordenador con un pulsador (Projecte Fressa).", url: "http://www.xtec.cat/~jlagares/" },
-      { nombre: "HeadMouse", texto: "Ratón virtual gratuito que se controla con la cabeza usando una webcam (Universitat de Lleida).", url: "http://robotica.udl.cat/catedra/headmouse/headmouse.html" },
+      { nombre: "Enable Viacam (eViacam)", texto: "Ratón virtual gratuito que se controla con la cabeza usando una webcam. Alternativa a HeadMouse, cuya web oficial no funciona.", url: "https://eviacam.crea-si.com/index.php" },
       { nombre: "AsTeRICS Grid", texto: "Comunicador por voz personalizable que funciona sin conexión, en el navegador.", url: "https://grid.asterics.eu" },
       { nombre: "Comunicador sencillo con pulsador", texto: "Ponlo siempre en el mismo sitio, márcalo con un pictograma y da tiempo para responder.", url: "https://arasaac.org/aac/es" },
       { nombre: "CEAPAT", texto: "Centro estatal de autonomía personal y ayudas técnicas: información sobre productos de apoyo.", url: "https://ceapat.imserso.es" }
@@ -322,7 +388,9 @@ const DISCAPACIDADES = [
       "Vocaliza bien, sin exagerar ni gritar.",
       "Apoya lo que dices con signos de LSE, gestos e imágenes.",
       "Aprende con la clase signos básicos: hola, agua, baño, jugar, bien, ayuda.",
-      "En la asamblea, señala a quién le toca hablar para que pueda mirarle."
+      "En la asamblea, señala a quién le toca hablar para que pueda mirarle.",
+      "Pregunta a la familia y a la logopeda cómo se comunica: lengua oral, lengua de signos o las dos.",
+      "Si usa sistema de FM (emisora), lleva el micrófono cerca de la boca y apágalo cuando no hables para él."
     ],
     materiales: [
       "Agenda visual y pictogramas para todas las rutinas.",
@@ -343,6 +411,22 @@ const DISCAPACIDADES = [
       "Repite o resume lo importante de forma visual al final.",
       "Da tiempo para mirar: primero mira el objeto, luego te mira a ti y después escucha."
     ],
+    alerta: [
+      "No se sobresalta con ruidos fuertes ni se gira hacia la voz.",
+      "No balbucea a los 6-8 meses o deja de hacerlo.",
+      "No responde cuando le llaman sin verle la cara.",
+      "Pide que le repitan o dice «¿qué?» a menudo.",
+      "Habla poco o mal para su edad y mira mucho a los labios.",
+      "Otitis de repetición: pueden causar pérdidas de audición temporales."
+    ],
+    coordinacion: [
+      "Familia: cómo se comunica en casa y cómo se cuida el audífono o el implante.",
+      "Maestra de Audición y Lenguaje (AL).",
+      "Especialista o intérprete de lengua de signos, si el centro lo tiene.",
+      "Equipo específico de discapacidad auditiva o equipo de orientación.",
+      "Otorrino y audioprotesista, a través de la familia (revisiones).",
+      "Asociaciones de personas sordas y de familias (CNSE, FIAPAS)."
+    ],
     actividad: {
       titulo: "Canción de los animales signada",
       edad: "3-6 años",
@@ -352,18 +436,18 @@ const DISCAPACIDADES = [
         "Presentar cada animal con un muñeco o una foto grande, su signo y su nombre.",
         "Cantar la canción despacio mientras toda la clase hace los signos.",
         "Juego: la maestra hace un signo y los niños buscan el muñeco correcto.",
-        "El niño sordo puede ser el «profe de signos» (refuerza su autoestima).",
+        "El niño con discapacidad auditiva puede ser el «profe de signos» (refuerza su autoestima).",
         "Cartel en la clase con las fotos de los signos aprendidos."
       ]
     },
     apps: [
       { nombre: "DILSE", texto: "Diccionario oficial de lengua de signos española de la Fundación CNSE, con miles de signos.", url: "https://fundacioncnse-dilse.org" },
-      { nombre: "DILSE (app)", texto: "El diccionario DILSE en el móvil. Incluye signos por temas para comunicarse con niños pequeños.", url: "https://play.google.com/store/apps/details?id=com.tresandroides.dilse" },
+      { nombre: "DILSE (app Android)", texto: "El diccionario DILSE en el móvil.", url: "https://play.google.com/store/apps/details?id=com.tresandroides.dilse" },
+      { nombre: "DILSE (app iPhone)", texto: "El diccionario DILSE para iPhone y iPad.", url: "https://apps.apple.com/es/app/dilse/id1497008462" },
       { nombre: "Spreadthesign", texto: "Diccionario online con vídeos de signos de muchas lenguas de signos, incluida la española.", url: "https://www.spreadthesign.com/es.es/" },
       { nombre: "TeCuento (CNSE)", texto: "Cuentos infantiles en lengua de signos española.", url: "https://tecuentoweb.org/" },
       { nombre: "¡Dilo con las manos!", texto: "Juegos y retos para aprender lo básico de la LSE (Android).", url: "https://play.google.com/store/search?q=dilo%20con%20las%20manos&c=apps" },
-      { nombre: "Transcripción instantánea (Google)", texto: "Pasa a texto lo que se habla en tiempo real.", url: "https://play.google.com/store/apps/details?id=com.google.audio.hearing.visualization.accessibility.scribe" },
-      { nombre: "Vocabulario temprano en LSE (CNSE)", texto: "Primeras palabras en signos para trabajar con los más pequeños.", url: "https://fundacioncnse.org/cdi/" }
+      { nombre: "Transcripción instantánea (Google)", texto: "Pasa a texto lo que se habla en tiempo real (solo Android).", url: "https://play.google.com/store/apps/details?id=com.google.audio.hearing.visualization.accessibility.scribe" }
     ]
   },
 
@@ -395,7 +479,8 @@ const DISCAPACIDADES = [
       "Juguetes sonoros: pelotas con cascabel, instrumentos.",
       "Baja visión: alto contraste (negro sobre amarillo), letra grande, rotulador grueso.",
       "Etiquetas táctiles en cajas y perchas (un objeto pegado o un relieve).",
-      "Lupa, atril y buena luz si tiene resto visual."
+      "Lupa, atril y buena luz si tiene resto visual.",
+      "Iniciación al braille con juegos de tacto fino: huevera de seis huecos con pelotas, puntos en relieve."
     ],
     espacio: [
       "Aula ordenada: cada cosa siempre en su sitio.",
@@ -409,6 +494,21 @@ const DISCAPACIDADES = [
       "Anticipar las rutinas con objetos de referencia (una cuchara = comer).",
       "Repetir los recorridos (aula, baño, patio) hasta que los haga solo.",
       "Pausas: el esfuerzo de atención auditiva y táctil cansa."
+    ],
+    alerta: [
+      "No sigue objetos ni caras con la mirada a los 3 meses.",
+      "Se acerca mucho al papel o a los objetos.",
+      "Tuerce un ojo, guiña, entorna los ojos o gira la cabeza para mirar.",
+      "Tropieza y choca con muebles o escalones.",
+      "Ojos rojos o llorosos, le molesta mucho la luz o se frota los ojos.",
+      "No reconoce a personas o dibujos a distancia."
+    ],
+    coordinacion: [
+      "Familia: qué ve, cómo se orienta y qué le ayuda en casa.",
+      "Equipo específico de la ONCE: maestra itinerante y material adaptado.",
+      "Técnico de rehabilitación de la ONCE: orientación y movilidad.",
+      "Maestra de PT y equipo de orientación.",
+      "Oftalmólogo, a través de la familia."
     ],
     actividad: {
       titulo: "La caja de las sorpresas",
@@ -425,9 +525,12 @@ const DISCAPACIDADES = [
     },
     apps: [
       { nombre: "Recursos educativos de la ONCE", texto: "Base de datos pública de recursos materiales y digitales para alumnado con discapacidad visual.", url: "https://educacion.once.es" },
-      { nombre: "Equipos específicos de la ONCE", texto: "A quién pedir apoyo, orientación y material adaptado para el alumno.", url: "https://educacion.once.es" },
-      { nombre: "Seeing AI", texto: "App de Microsoft que describe en voz alta objetos, personas y textos.", url: "https://www.seeingai.com" },
-      { nombre: "Be My Eyes", texto: "Conecta con voluntarios o una IA que describen lo que enfoca la cámara.", url: "https://www.bemyeyes.com" }
+      { nombre: "Equipos específicos de la ONCE (CRE)", texto: "A quién pedir apoyo, orientación y material adaptado para el alumno.", url: "https://educacion.once.es/cres" },
+      { nombre: "Atención temprana (ONCE)", texto: "Documentos y pautas para niños de 0 a 6 años con discapacidad visual.", url: "https://educacion.once.es/recursos-documentacion/atencion-temprana" },
+      { nombre: "Braille (ONCE)", texto: "Qué es el braille y cómo se inicia su aprendizaje.", url: "https://educacion.once.es/braille" },
+      { nombre: "Braitico (ONCE)", texto: "Método de la ONCE para aprender braille jugando desde edades tempranas.", url: "https://educacion.once.es/braitico" },
+      { nombre: "Seeing AI", texto: "App de Microsoft que describe en voz alta objetos y textos. Es para adultos: útil para familias o maestras con discapacidad visual.", url: "https://www.seeingai.com" },
+      { nombre: "Be My Eyes", texto: "Conecta con voluntarios o una IA que describen lo que enfoca la cámara. Es para adultos, no para el niño.", url: "https://www.bemyeyes.com" }
     ]
   },
 
@@ -452,7 +555,8 @@ const DISCAPACIDADES = [
       "Pon nombre a la emoción: «Estás enfadado porque querías el coche».",
       "Elogia en concreto cuando se porta bien: «¡Qué bien has esperado tu turno!».",
       "Ofrece elecciones sencillas: «¿Recoges los coches o los bloques?».",
-      "Habla de lo ocurrido cuando ya esté tranquilo, no durante la rabieta."
+      "Habla de lo ocurrido cuando ya esté tranquilo, no durante la rabieta.",
+      "Acuerda con la familia las mismas normas y la misma forma de responder."
     ],
     materiales: [
       "Cartel de normas de clase con pictogramas de ARASAAC (pocas y en positivo).",
@@ -472,7 +576,23 @@ const DISCAPACIDADES = [
       "Avisa antes de cada cambio («dos minutos y recogemos»).",
       "Esperas cortas y con algo que hacer.",
       "Tiempos de movimiento entre actividades tranquilas.",
-      "Responsabilidades diarias (repartir vasos) para que se sienta importante."
+      "Responsabilidades diarias (repartir vasos) para que se sienta importante.",
+      "Apunta qué pasa justo antes y después de la conducta: ayuda a entender por qué ocurre."
+    ],
+    alerta: [
+      "Rabietas muy largas, muy frecuentes o que siguen igual después de los 4 años.",
+      "Hace daño a otros o a sí mismo a menudo (muerde, pega, se golpea).",
+      "No se calma con la ayuda de un adulto.",
+      "Cambio brusco de conducta: puede haber algo detrás (duelo, separación, sueño, salud).",
+      "Las conductas aparecen en todos los sitios: casa, aula y patio.",
+      "Detrás puede haber un problema de lenguaje, de audición u otra necesidad sin detectar."
+    ],
+    coordinacion: [
+      "Familia: mismas normas y misma respuesta en casa y en el cole.",
+      "Todo el equipo del centro (maestras, apoyo, comedor): la misma respuesta.",
+      "Equipo de orientación o de atención temprana.",
+      "Maestra de PT.",
+      "Pediatra o salud mental infantil, a través de la familia, si no mejora."
     ],
     actividad: {
       titulo: "El semáforo de las emociones",
@@ -494,8 +614,170 @@ const DISCAPACIDADES = [
       { nombre: "ClassDojo", texto: "Puntos por conductas positivas, como una economía de fichas digital.", url: "https://www.classdojo.com/es-es/" },
       { nombre: "Día a Día", texto: "Agenda con fotos y pictogramas: anticipar lo que va a pasar reduce las rabietas.", url: "https://fundacionorange.es/aplicaciones/dia-a-dia/" }
     ]
+  },
+
+  /* ===================== TRASTORNOS DEL LENGUAJE ===================== */
+  {
+    id: "lenguaje",
+    nombre: "Trastornos del lenguaje",
+    emoji: "🗣️",
+    color: "#EC7FA9",          // rosa
+    lema: "Modelo claro y tiempo para hablar",
+    caracteristicas: [
+      "Va desde un retraso simple del lenguaje (empieza tarde y luego avanza) hasta un trastorno del desarrollo del lenguaje (TDL, antes TEL), que es persistente.",
+      "Empieza a hablar tarde y tiene poco vocabulario para su edad.",
+      "Frases cortas o desordenadas y errores al pronunciar que dificultan entenderle.",
+      "Puede costarle también comprender órdenes largas, preguntas o cuentos.",
+      "Se frustra o se aísla cuando no le entienden; puede usar gestos o rabietas.",
+      "No se explica por una pérdida de audición ni por una discapacidad intelectual."
+    ],
+    alerta: [
+      "No balbucea ni hace gestos (señalar, decir adiós) a los 12 meses.",
+      "No dice palabras a los 18 meses.",
+      "No une dos palabras a los 2 años o dice menos de 50 palabras.",
+      "A los 3 años las personas de fuera de la familia no le entienden.",
+      "A los 4 años no cuenta lo que le ha pasado ni hace frases completas.",
+      "No entiende órdenes sencillas o pierde lenguaje que ya tenía."
+    ],
+    comunicacion: [
+      "Ponte a su altura, mírale y habla despacio, con frases cortas y claras.",
+      "No le corrijas ni le hagas repetir: devuélvele la frase bien dicha («¿Quieres el coche rojo?»).",
+      "Amplía lo que dice: si dice «perro come», responde «sí, el perro come pan».",
+      "Dale tiempo para contestar y no hables por él.",
+      "Ofrece elecciones («¿zumo o agua?») en vez de preguntas de sí o no.",
+      "Apoya con gestos, pictogramas o signos: no frenan el habla, la ayudan."
+    ],
+    materiales: [
+      "Fotos y láminas reales (Soy Visual) para vocabulario y frases.",
+      "Pictogramas de ARASAAC para ordenar frases: quién + qué hace + qué.",
+      "Cuentos con imágenes grandes, frases repetidas y onomatopeyas.",
+      "Juegos de sonidos: onomatopeyas, palmear sílabas, palabras que empiezan igual.",
+      "Canciones con gestos, rimas y retahílas.",
+      "Tablero de comunicación para pedir, si se le entiende muy poco."
+    ],
+    espacio: [
+      "Cerca de la maestra y de frente, para ver su cara y su boca.",
+      "Reducir el ruido de fondo en los momentos de hablar.",
+      "Rincón de cuentos y de juego simbólico (cocinita, médicos): invitan a hablar.",
+      "Grupos pequeños o parejas: se anima más que en gran grupo."
+    ],
+    tiempos: [
+      "Un rato diario de conversación en pequeño grupo.",
+      "No meterle prisa ni dejar que otros contesten por él.",
+      "Anticipar el vocabulario nuevo antes del cuento o del proyecto.",
+      "Repetir los mismos cuentos y canciones varios días.",
+      "Turnos de palabra claros en la asamblea, con un objeto que se pasa."
+    ],
+    coordinacion: [
+      "Maestra de Audición y Lenguaje (AL) o logopeda: es la referencia.",
+      "Familia: mismas pautas en casa (hablar mucho con él, leer cuentos, no corregir).",
+      "Equipo de orientación o de atención temprana, para valorar.",
+      "Pediatra y otorrino, a través de la familia: descartar una pérdida de audición.",
+      "Asociación de familias con TEL/TDL."
+    ],
+    actividad: {
+      titulo: "El saco de las palabras",
+      edad: "3-5 años",
+      objetivo: "Ampliar vocabulario y construir frases cortas.",
+      pasos: [
+        "Saco con objetos reales conocidos: cuchara, pelota, coche, peine.",
+        "Cada niño saca uno sin mirar; la maestra lo nombra despacio y todos lo repiten con un gesto.",
+        "Pregunta con elección: «¿Es para comer o para jugar?».",
+        "El niño con trastorno del lenguaje responde como pueda (palabra, gesto o pictograma) y la maestra le devuelve la frase completa.",
+        "Tira de pictogramas en la pizarra: «yo + tengo + la pelota».",
+        "Final: canción con los objetos que han salido."
+      ]
+    },
+    apps: [
+      { nombre: "Soy Visual", texto: "Fotos, láminas y materiales para estimular el lenguaje.", url: "https://www.soyvisual.org" },
+      { nombre: "ARASAAC", texto: "Pictogramas para apoyar la comprensión y ordenar frases.", url: "https://arasaac.org" },
+      { nombre: "Pictotraductor", texto: "Convierte una frase escrita en pictogramas.", url: "https://www.pictotraductor.com" },
+      { nombre: "Aula PT – Estimulación del lenguaje", texto: "Fichas y juegos para trabajar el lenguaje oral.", url: "https://www.aulapt.org/category/estimulacion-del-lenguaje/" },
+      { nombre: "Maestros de Audición y Lenguaje", texto: "Blog de maestros de AL con materiales para trabajar el lenguaje.", url: "https://www.maestrosdeaudicionylenguaje.com" },
+      { nombre: "ATELMA", texto: "Asociación de familias con TEL/TDL de Madrid: información y guías.", url: "https://www.atelma.es" }
+    ]
+  },
+
+  /* ======================= RETRASO MADURATIVO ======================= */
+  {
+    id: "madurativo",
+    nombre: "Retraso madurativo",
+    emoji: "🌻",
+    color: "#C9A227",          // mostaza
+    lema: "A su ritmo, con apoyo",
+    caracteristicas: [
+      "Va por detrás de su edad en una o varias áreas: movimiento, lenguaje, juego, autonomía o relación.",
+      "Es un término provisional muy usado en Infantil, cuando aún no hay un diagnóstico claro.",
+      "Con estimulación, muchos niños alcanzan a sus compañeros; en otros aparece después otro diagnóstico.",
+      "Atención corta y cansancio rápido en las tareas de mesa.",
+      "Juego más propio de niños más pequeños.",
+      "Necesita más ayuda del adulto en las rutinas."
+    ],
+    alerta: [
+      "No sonríe a las personas a los 3 meses.",
+      "No se sienta solo a los 9 meses.",
+      "No anda a los 18 meses.",
+      "No dice palabras a los 18 meses ni frases de dos palabras a los 2 años.",
+      "No imita ni hace juego simbólico a los 2-3 años.",
+      "Pierde habilidades que ya tenía, a cualquier edad."
+    ],
+    comunicacion: [
+      "Instrucciones cortas, de una en una y con demostración.",
+      "Lenguaje ajustado a su nivel, no a su edad.",
+      "Apoyo visual: fotos, pictogramas y gestos.",
+      "Refuerza cada avance y evita compararle con los demás.",
+      "Pon palabras a lo que hace mientras juega."
+    ],
+    materiales: [
+      "Material manipulativo y sensorial: encajables, construcciones, plastilina, bandejas de experimentación.",
+      "Las mismas actividades que el grupo, con un paso menos o una ayuda más.",
+      "Lápices y pinceles gruesos, tijeras adaptadas.",
+      "Secuencias con fotos para las rutinas (aseo, abrigo, almuerzo).",
+      "Juguetes de causa-efecto y de juego simbólico."
+    ],
+    espacio: [
+      "Cerca de la maestra y junto a compañeros que le sirvan de modelo.",
+      "Rincones claros y con pocos materiales a la vez.",
+      "Espacio para moverse: suelo, colchonetas, circuitos.",
+      "Trabajo en pequeño grupo."
+    ],
+    tiempos: [
+      "Más tiempo para cada tarea y para las rutinas.",
+      "Actividades cortas, alternando mesa y movimiento.",
+      "Rutinas estables y anticipadas con agenda visual.",
+      "Repetir los aprendizajes en juegos y momentos distintos.",
+      "Revisar su evolución cada trimestre: cambia rápido."
+    ],
+    coordinacion: [
+      "Familia: comparte lo que funciona y pide que observen en casa.",
+      "Equipo de orientación o de atención temprana: valoración y seguimiento.",
+      "Centro de atención temprana (0-6 años): estimulación, logopedia, fisioterapia.",
+      "Maestras de PT y AL.",
+      "Pediatra, a través de la familia: descartar problemas de vista, oído o salud."
+    ],
+    actividad: {
+      titulo: "Circuito de los animales",
+      edad: "2-4 años",
+      objetivo: "Trabajar movimiento, imitación y vocabulario a la vez.",
+      pasos: [
+        "Circuito sencillo: túnel, aros, banco y colchoneta.",
+        "En cada estación, la foto de un animal: reptar como la serpiente, saltar como la rana…",
+        "La maestra lo hace primero y nombra el animal y la acción.",
+        "El niño con retraso madurativo lo hace de la mano de un compañero o con menos estaciones.",
+        "Al terminar cada estación pega un gomet en su tarjeta.",
+        "Asamblea final: «¿qué animal te ha gustado?». Responde con palabra, gesto o señalando la foto."
+      ]
+    },
+    apps: [
+      { nombre: "GAT – Atención Temprana", texto: "Federación de profesionales de atención temprana: información y documentos.", url: "https://gat-atenciontemprana.org" },
+      { nombre: "Familia y Salud", texto: "Web de pediatras de atención primaria (AEPap) con información sobre el desarrollo infantil.", url: "https://www.familiaysalud.es" },
+      { nombre: "Orientación Andújar – Atención temprana", texto: "Materiales de estimulación para los primeros años.", url: "https://www.orientacionandujar.es/tag/atencion-temprana/" },
+      { nombre: "Soy Visual", texto: "Fotos y láminas reales para trabajar el lenguaje.", url: "https://www.soyvisual.org" },
+      { nombre: "ARASAAC", texto: "Pictogramas para agendas y rutinas.", url: "https://arasaac.org" }
+    ]
   }
 ];
+
 
 
 /* ---------------------------------------------------------------------
@@ -512,44 +794,60 @@ const TIPOS_RECURSO = [
 
 const RECURSOS = [
   /* ---- Cuentos adaptados ---- */
-  { tipo: "cuentos", disc: ["tea", "intelectual", "down"], nombre: "Cuentos de Aprendices Visuales",
+  { tipo: "cuentos", disc: ["tea", "intelectual", "down", "lenguaje", "madurativo"], nombre: "Cuentos de Aprendices Visuales",
     texto: "Cuentos con pictogramas sobre rutinas, autonomía y emociones.", url: "https://plataformaescuelasvisuales.com/p/cuentospictogramas" },
-  { tipo: "cuentos", disc: ["tea", "intelectual", "down"], nombre: "Cuentos con pictogramas (Actividades de Infantil y Primaria)",
-    texto: "Cuentos cortos con pictogramas en PDF para iniciar la lectura y para alumnos con NEE.", url: "https://www.actividadesdeinfantilyprimaria.com" },
-  { tipo: "cuentos", disc: ["tea", "intelectual", "down"], nombre: "Cuentos adaptados de Orientación Andújar",
-    texto: "Cuentos clásicos y populares adaptados con pictogramas para descargar.", url: "https://www.orientacionandujar.es" },
+  { tipo: "cuentos", disc: ["tea", "intelectual", "down", "lenguaje", "madurativo"], nombre: "Cuentos con pictogramas (Actividades de Infantil y Primaria)",
+    texto: "Cuentos cortos con pictogramas en PDF para iniciar la lectura y para alumnos con NEE.", url: "https://www.actividadesdeinfantilyprimaria.com/?s=cuentos+con+pictogramas" },
+  { tipo: "cuentos", disc: ["tea", "intelectual", "down", "lenguaje", "madurativo"], nombre: "Cuentos adaptados de Orientación Andújar",
+    texto: "Cuentos clásicos y populares adaptados con pictogramas para descargar.", url: "https://www.orientacionandujar.es/tag/cuentos-con-pictogramas/" },
   { tipo: "cuentos", disc: ["tea", "intelectual", "motorica", "auditiva"], nombre: "Xandre, el elefante sin sombra (TADEGa)",
     texto: "Cuento interactivo, adaptado y accesible en diferentes sistemas de comunicación.", url: "https://tadega.net" },
   { tipo: "cuentos", disc: ["auditiva"], nombre: "TeCuento (CNSE)",
     texto: "Biblioteca de cuentos infantiles en lengua de signos española.", url: "https://tecuentoweb.org/" },
-  { tipo: "cuentos", disc: ["auditiva"], nombre: "Cuentos para prevenir (CNSE)",
-    texto: "Cuentos y relatos infantiles en lengua de signos sobre prevención y hábitos saludables.", url: "https://fundacioncnse.org/cuentosdrogas2/" },
   { tipo: "cuentos", disc: ["auditiva"], nombre: "Signacuentos (Editorial Carambuco)",
     texto: "Cuentos adaptados a la lengua de signos, para niños sordos y oyentes.", url: "https://www.signacuentos.com" },
   { tipo: "cuentos", disc: ["visual"], nombre: "Cuentos con texturas de la ONCE",
-    texto: "Libros adaptados al tacto para niños con discapacidad visual (búscalos en su catálogo).", url: "https://educacion.once.es" },
+    texto: "Cómo adaptar cuentos y materiales al tacto para niños con discapacidad visual.", url: "https://educacion.once.es/recursos-documentacion/adaptacion-de-materiales" },
   { tipo: "cuentos", disc: ["auditiva"], nombre: "Mi baúl de lengua de signos (CNSE)",
     texto: "Biblioteca gratuita de cuentos y canciones en lengua de signos, ordenados por edad.", url: "https://mibaul.fundacioncnse.org/" },
-  { tipo: "cuentos", disc: ["tea", "conducta", "intelectual", "down"], nombre: "Cuentos para crecer",
-    texto: "Cuentos gratuitos para trabajar emociones, valores y convivencia.", url: "https://cuentosparacrecer.org/" },
 
   /* ---- Fichas y materiales ---- */
-  { tipo: "fichas", disc: ["tea", "down", "intelectual", "motorica", "conducta"], nombre: "Catálogo de materiales de ARASAAC",
+  { tipo: "fichas", disc: ["tea", "down", "intelectual", "motorica", "conducta", "lenguaje", "madurativo"], nombre: "Catálogo de materiales de ARASAAC",
     texto: "Miles de materiales hechos con pictogramas (agendas, tableros, juegos, cuentos) con buscador y filtros.", url: "https://arasaac.org/materials/search" },
   { tipo: "fichas", disc: ["tea", "motorica", "intelectual"], nombre: "Aula Abierta de ARASAAC",
     texto: "Tutoriales y materiales de comunicación aumentativa: tableros, cuadernos y libros de comunicación.", url: "https://aulaabierta.arasaac.org" },
   { tipo: "fichas", disc: ["tea", "intelectual", "motorica"], nombre: "Picto Selector",
     texto: "Programa para crear e imprimir tableros y actividades con pictogramas.", url: "https://www.pictoselector.eu/es/" },
-  { tipo: "fichas", disc: ["tea", "down", "intelectual", "conducta"], nombre: "Orientación Andújar",
+  { tipo: "fichas", disc: ["tea", "down", "intelectual", "conducta", "lenguaje", "madurativo"], nombre: "Orientación Andújar",
     texto: "Blog con muchísimas fichas, pictogramas y materiales para NEAE e Infantil.", url: "https://www.orientacionandujar.es" },
   { tipo: "fichas", disc: ["tea", "down", "intelectual"], nombre: "Actividades de Infantil y Primaria (NEAE)",
-    texto: "Fichas, frases con pictogramas, instrucciones con apoyo visual y material TEA.", url: "https://www.actividadesdeinfantilyprimaria.com" },
-  { tipo: "fichas", disc: ["down", "intelectual"], nombre: "Aula PT – Infantil",
+    texto: "Fichas, frases con pictogramas, instrucciones con apoyo visual y material TEA.", url: "https://www.actividadesdeinfantilyprimaria.com/category/neae/" },
+  { tipo: "fichas", disc: ["down", "intelectual", "lenguaje", "madurativo"], nombre: "Aula PT – Infantil",
     texto: "Fichas y adaptaciones de Pedagogía Terapéutica para Educación Infantil.", url: "https://www.aulapt.org/tag/infantil/" },
   { tipo: "fichas", disc: ["visual"], nombre: "Recursos educativos de la ONCE",
-    texto: "Materiales táctiles, sonoros y digitales para alumnos con ceguera o baja visión.", url: "https://educacion.once.es" },
+    texto: "Documentos de atención temprana (0-6 años) para alumnos con ceguera o baja visión.", url: "https://educacion.once.es/recursos-documentacion/atencion-temprana" },
   { tipo: "fichas", disc: ["auditiva"], nombre: "Matemáticas visuales (CNSE)",
     texto: "Recursos visuales y en LSE para trabajar números y conceptos matemáticos.", url: "https://fundacioncnse.org/educa/matematicas/" },
+  { tipo: "fichas", disc: ["visual"], nombre: "Braitico (ONCE)",
+    texto: "Método de la ONCE para aprender braille jugando desde edades tempranas.", url: "https://educacion.once.es/braitico" },
+  { tipo: "fichas", disc: ["visual"], nombre: "Atención temprana (ONCE)",
+    texto: "Documentos y pautas para niños de 0 a 6 años con discapacidad visual.", url: "https://educacion.once.es/recursos-documentacion/atencion-temprana" },
+  { tipo: "fichas", disc: ["conducta", "tea"], nombre: "Materiales de emociones (ARASAAC)",
+    texto: "Materiales con pictogramas para reconocer y expresar emociones.", url: "https://arasaac.org/materials/search/emociones" },
+  { tipo: "fichas", disc: ["conducta", "tea"], nombre: "Materiales de normas (ARASAAC)",
+    texto: "Carteles y materiales con pictogramas sobre las normas de clase.", url: "https://arasaac.org/materials/search/normas" },
+  { tipo: "fichas", disc: ["conducta"], nombre: "Orientación Andújar – Emociones",
+    texto: "Fichas, juegos y cuentos para trabajar las emociones.", url: "https://www.orientacionandujar.es/tag/emociones/" },
+  { tipo: "fichas", disc: ["conducta"], nombre: "Aula PT – Conducta",
+    texto: "Materiales y registros para trabajar la conducta en el aula.", url: "https://www.aulapt.org/tag/conducta/" },
+  { tipo: "fichas", disc: ["motorica", "visual", "auditiva"], nombre: "Guía AIJU de juegos y juguetes",
+    texto: "Guía de juguetes que indica cuáles son accesibles para niños con discapacidad motora, visual o auditiva.", url: "https://www.guiaaiju.com" },
+  { tipo: "fichas", disc: ["lenguaje"], nombre: "Aula PT – Estimulación del lenguaje",
+    texto: "Fichas y juegos para trabajar el lenguaje oral.", url: "https://www.aulapt.org/category/estimulacion-del-lenguaje/" },
+  { tipo: "fichas", disc: ["lenguaje"], nombre: "Orientación Andújar – Estimulación del lenguaje",
+    texto: "Materiales para estimular el lenguaje oral en Infantil.", url: "https://www.orientacionandujar.es/tag/estimulacion-del-lenguaje/" },
+  { tipo: "fichas", disc: ["madurativo"], nombre: "Orientación Andújar – Atención temprana",
+    texto: "Materiales de estimulación para los primeros años.", url: "https://www.orientacionandujar.es/tag/atencion-temprana/" },
 
   /* ---- Lengua de signos ---- */
   { tipo: "signos", disc: ["auditiva"], nombre: "LSE en el aula 0-6 (CNSE)",
@@ -568,11 +866,9 @@ const RECURSOS = [
     texto: "Diccionario de signos en vídeo, con la lengua de signos española.", url: "https://www.spreadthesign.com/es.es/" },
   { tipo: "signos", disc: ["auditiva"], nombre: "LSE TIC: crea tus juegos (CNSE)",
     texto: "Herramienta para crear juegos educativos con signos.", url: "https://fundacioncnse.org/educa/lsetic/" },
-  { tipo: "signos", disc: ["auditiva"], nombre: "Jugando con cabeza (CNSE)",
-    texto: "Juegos y actividades en LSE para familias y aula.", url: "https://jugandoconcabeza.fundacioncnse.org/" },
 
   /* ---- Webs de recursos ---- */
-  { tipo: "webs", disc: ["tea", "down", "intelectual", "motorica", "conducta"], nombre: "ARASAAC",
+  { tipo: "webs", disc: ["tea", "down", "intelectual", "motorica", "conducta", "lenguaje", "madurativo"], nombre: "ARASAAC",
     texto: "Portal aragonés de comunicación aumentativa: pictogramas, materiales y programas gratuitos.", url: "https://arasaac.org" },
   { tipo: "webs", disc: ["tea"], nombre: "Autismo España",
     texto: "Confederación de entidades de autismo: guías y recursos para familias y escuela.", url: "https://autismo.org.es" },
@@ -584,15 +880,73 @@ const RECURSOS = [
     texto: "Información y orientación para familias y profesionales de niños sordos.", url: "https://mihijosordo.org/" },
   { tipo: "webs", disc: ["motorica"], nombre: "CEAPAT",
     texto: "Centro estatal de referencia en productos de apoyo y accesibilidad.", url: "https://ceapat.imserso.es" },
-  { tipo: "webs", disc: ["tea", "down", "intelectual", "motorica", "auditiva", "visual", "conducta"], nombre: "INTEF – Recursos educativos",
+  { tipo: "webs", disc: ["tea", "down", "intelectual", "motorica", "auditiva", "visual", "conducta", "lenguaje", "madurativo"], nombre: "INTEF – Recursos educativos",
     texto: "Recursos educativos abiertos del Ministerio de Educación.", url: "https://intef.es/recursos-educativos/" },
-  { tipo: "webs", disc: ["tea", "down", "intelectual", "motorica", "auditiva", "visual", "conducta"], nombre: "Procomún (INTEF)",
+  { tipo: "webs", disc: ["tea", "down", "intelectual", "motorica", "auditiva", "visual", "conducta", "lenguaje", "madurativo"], nombre: "Procomún (INTEF)",
     texto: "Repositorio de recursos educativos abiertos con buscador por etapa y tema.", url: "https://procomun.intef.es/" },
   { tipo: "webs", disc: ["tea", "intelectual"], nombre: "Proyecto Azahar",
     texto: "Apps gratuitas de comunicación, ocio y autonomía con pictogramas (Universidad de Valencia y Fundación Orange).", url: "https://www.proyectoazahar.org/azahar/" },
   { tipo: "webs", disc: ["visual"], nombre: "Fundación ONCE",
-    texto: "Información sobre inclusión y accesibilidad de personas con discapacidad.", url: "https://www.fundaciononce.es/es" }
+    texto: "Información sobre inclusión y accesibilidad de personas con discapacidad.", url: "https://www.fundaciononce.es/es" },
+  { tipo: "webs", disc: ["visual"], nombre: "Apps accesibles (ONCE)",
+    texto: "Selección de apps accesibles para alumnado con discapacidad visual.", url: "https://educacion.once.es/apps-accesibles" },
+  { tipo: "webs", disc: ["motorica"], nombre: "Confederación ASPACE",
+    texto: "Entidades de parálisis cerebral: información y recursos para familias y escuela.", url: "https://aspace.org" },
+  { tipo: "webs", disc: ["motorica"], nombre: "FEBHI",
+    texto: "Federación de asociaciones de espina bífida e hidrocefalia.", url: "https://febhi.org" },
+  { tipo: "webs", disc: ["lenguaje"], nombre: "ATELMA",
+    texto: "Asociación de familias con TEL/TDL de Madrid: información y guías.", url: "https://www.atelma.es" },
+  { tipo: "webs", disc: ["madurativo", "intelectual", "down"], nombre: "GAT – Atención Temprana",
+    texto: "Federación de profesionales de atención temprana: información y documentos.", url: "https://gat-atenciontemprana.org" },
+  { tipo: "webs", disc: ["tea", "down", "intelectual", "motorica", "auditiva", "visual", "conducta", "lenguaje", "madurativo"], nombre: "CREENA (Navarra)",
+    texto: "Centro de recursos para la equidad educativa de Navarra: orientaciones y materiales por tipo de necesidad.", url: "https://creena.educacion.navarra.es/web/" }
 ];
+
+
+/* ---------------------------------------------------------------------
+   2b) DISEÑO UNIVERSAL PARA EL APRENDIZAJE (pantalla #dua)
+   --------------------------------------------------------------------- */
+const DUA = {
+  intro: [
+    "El Diseño Universal para el Aprendizaje (DUA) propone preparar la clase desde el principio para todos, en vez de adaptarla después para uno.",
+    "La ley educativa (LOMLOE) y el currículo de Infantil piden aplicar sus principios.",
+    "Si la actividad ya ofrece varias formas de participar, hacen falta menos adaptaciones individuales."
+  ],
+  principios: [
+    { icono: "💛", titulo: "Implicación: el porqué", texto: "Varias formas de motivar y de participar.", ejemplos: [
+      "Dejar elegir: rincón, material, color o compañero.",
+      "Partir de sus intereses (animales, coches, su familia).",
+      "Rutinas previsibles y agenda visual para sentirse seguros.",
+      "Retos ajustados a cada niño y elogio del esfuerzo."
+    ]},
+    { icono: "👀", titulo: "Representación: el qué", texto: "Presentar la información por varios canales.", ejemplos: [
+      "Contar lo mismo con voz, imagen, objeto real, gesto o signo.",
+      "Pictogramas y fotos en rincones, normas y rutinas.",
+      "Cuentos con imágenes grandes, texturas y sonidos.",
+      "Demostrar antes de pedir (modelado)."
+    ]},
+    { icono: "✋", titulo: "Acción y expresión: el cómo", texto: "Dejar que cada niño demuestre lo que sabe a su manera.", ejemplos: [
+      "Responder hablando, señalando, con un pictograma, un signo o un dibujo.",
+      "Materiales de distinto grosor y tamaño para todos, no solo para uno.",
+      "Tiempo flexible para terminar.",
+      "Secuencias de pasos a la vista para organizarse."
+    ]}
+  ],
+  ejemplo: {
+    titulo: "Ejemplo: el cuento de la semana",
+    pasos: [
+      "Se cuenta con voz, láminas grandes, objetos reales y algunos signos.",
+      "Los personajes están también en pictogramas y en figuras para tocar.",
+      "Cada niño elige cómo participar: poner voz, mover un muñeco o colocar las láminas en orden.",
+      "Al final, cada uno cuenta lo que más le ha gustado hablando, señalando o dibujando."
+    ]
+  },
+  enlaces: [
+    { nombre: "Pautas DUA (CAST)", texto: "La fuente original de las pautas del DUA, con versión en español.", url: "https://udlguidelines.cast.org/" },
+    { nombre: "EducaDUA", texto: "Web universitaria española con documentos y recursos sobre el DUA.", url: "https://www.educadua.es" },
+    { nombre: "Orientación Andújar – DUA", texto: "Infografías y materiales sobre el DUA para el aula.", url: "https://www.orientacionandujar.es/tag/dua/" }
+  ]
+};
 
 
 /* ---------------------------------------------------------------------
@@ -655,7 +1009,7 @@ const Modelo = {
   /* Junta en una sola lista todo lo que se puede buscar o marcar como favorito */
   todosLosElementos() {
     const lista = [];
-    const listas = ["caracteristicas", "comunicacion", "materiales", "espacio", "tiempos"];
+    const listas = ["caracteristicas", "alerta", "comunicacion", "materiales", "espacio", "tiempos", "coordinacion"];
 
     DISCAPACIDADES.forEach(d => {
       listas.forEach(clave => {
@@ -678,6 +1032,8 @@ const Modelo = {
       }));
     });
 
+    lista.push({ id: "dua", titulo: "♾️ Diseño Universal para el Aprendizaje (DUA)", texto: DUA.intro.join(" "), url: "#dua" });
+
     RECURSOS.forEach(r => {
       const tipo = TIPOS_RECURSO.find(t => t.clave === r.tipo);
       lista.push({
@@ -685,7 +1041,8 @@ const Modelo = {
         titulo: tipo.icono + " " + r.nombre, texto: r.texto, url: r.url, disc: r.disc[0]
       });
     });
-    return lista;
+    const vistos = new Set();   // la misma app sale en varias fichas: se queda solo la primera
+    return lista.filter(el => !vistos.has(el.id) && vistos.add(el.id));
   },
 
   /* Devuelve los elementos que contienen todas las palabras buscadas */
